@@ -2,6 +2,10 @@
 
 A powerful web application that uses Large Language Models (LLMs) to generate comprehensive, customizable summaries of YouTube videos.
 
+## Overview
+
+This application provides an intuitive interface for users to summarize YouTube videos using advanced LLM technology. It extracts video transcripts, processes them through OpenRouter's LLM API, and presents structured, interactive summaries with customizable options.
+
 ## Features
 
 - **Intuitive URL Input**: Easily paste YouTube video URLs to generate summaries
