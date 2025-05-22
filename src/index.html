@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Summarizer</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fab fa-youtube"></i>
+            <h1>VideoSummarizer</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+        <div class="user-profile">
+            <img src="https://via.placeholder.com/40" alt="User Profile">
+        </div>
+    </header>
+
+    <main>
+        <section class="input-section">
+            <h2>Summarize YouTube Video</h2>
+            <div class="url-input-container">
+                <input type="text" id="video-url" placeholder="Paste YouTube URL here...">
+                <button class="paste-btn"><i class="fas fa-paste"></i></button>
+                <button class="submit-btn">Summarize</button>
+            </div>
+            <div class="recent-videos">
+                <h3>Recent Videos</h3>
+                <div class="video-history">
+                    <div class="history-item">
+                        <img src="https://via.placeholder.com/120x68" alt="Video Thumbnail">
+                        <div class="history-item-info">
+                            <h4>How LLMs are Changing AI Development</h4>
+                            <p>Summarized 2 days ago</p>
+                        </div>
+                    </div>
+                    <div class="history-item">
+                        <img src="https://via.placeholder.com/120x68" alt="Video Thumbnail">
+                        <div class="history-item-info">
+                            <h4>The Future of Web Development</h4>
+                            <p>Summarized 5 days ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="video-player-container">
+                <div class="video-player">
+                    <img src="https://via.placeholder.com/640x360" alt="Video Player Placeholder">
+                    <div class="player-controls">
+                        <button><i class="fas fa-play"></i></button>
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <button><i class="fas fa-volume-up"></i></button>
+                        <button><i class="fas fa-expand"></i></button>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>How Artificial Intelligence is Revolutionizing Healthcare</h3>
+                    <p>TechInsights • 1.2M views • 2 weeks ago</p>
+                </div>
+            </div>
+
+            <div class="customization-panel">
+                <h3>Customize Summary</h3>
+                
+                <div class="customization-group">
+                    <h4>Length & Detail</h4>
+                    <div class="slider-control">
+                        <label for="length-slider">Summary Length</label>
+                        <input type="range" id="length-slider" min="1" max="5" value="3">
+                        <div class="slider-labels">
+                            <span>Concise</span>
+                            <span>Detailed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown-control">
+                        <label for="detail-level">Detail Level</label>
+                        <select id="detail-level">
+                            <option value="key-points">Key Points Only</option>
+                            <option value="standard" selected>Standard Summary</option>
+                            <option value="comprehensive">Comprehensive Analysis</option>
+                            <option value="technical">Technical Breakdown</option>
+                        </select>
+                    </div>
+                    
+                    <div class="toggle-control">
+                        <label for="timestamps-toggle">Include Timestamps</label>
+                        <label class="switch">
+                            <input type="checkbox" id="timestamps-toggle" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="toggle-control">
+                        <label for="chapters-toggle">Generate Chapters</label>
+                        <label class="switch">
+                            <input type="checkbox" id="chapters-toggle" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="customization-group">
+                    <h4>Style & Tone</h4>
+                    <div class="radio-control">
+                        <label>Tone</label>
+                        <div class="radio-options">
+                            <label>
+                                <input type="radio" name="tone" value="casual" checked>
+                                <span>Casual</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="tone" value="formal">
+                                <span>Formal</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="tone" value="academic">
+                                <span>Academic</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="tone" value="technical">
+                                <span>Technical</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-control">
+                        <label for="complexity-slider">Language Complexity</label>
+                        <input type="range" id="complexity-slider" min="1" max="5" value="3">
+                        <div class="slider-labels">
+                            <span>Simple</span>
+                            <span>Advanced</span>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown-control">
+                        <label for="audience">Target Audience</label>
+                        <select id="audience">
+                            <option value="general" selected>General</option>
+                            <option value="student">Student</option>
+                            <option value="professional">Professional</option>
+                            <option value="expert">Expert</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button class="apply-settings-btn">Apply Settings</button>
+            </div>
+
+            <div class="summary-container">
+                <div class="summary-header">
+                    <h3>Video Summary</h3>
+                    <div class="summary-actions">
+                        <button><i class="fas fa-download"></i> Export</button>
+                        <button><i class="fas fa-share-alt"></i> Share</button>
+                        <button><i class="fas fa-print"></i> Print</button>
+                    </div>
+                </div>
+                
+                <div class="summary-content">
+                    <div class="chapter">
+                        <div class="chapter-header">
+                            <h4><span class="timestamp">00:00</span> Introduction to AI in Healthcare</h4>
+                            <button class="expand-btn"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="chapter-content">
+                            <p>The video begins with an overview of how artificial intelligence is transforming the healthcare industry. The speaker emphasizes that AI technologies are not replacing healthcare professionals but rather augmenting their capabilities.</p>
+                            <p class="key-point">Key point: AI is projected to save the healthcare industry $150 billion annually by 2025.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter">
+                        <div class="chapter-header">
+                            <h4><span class="timestamp">03:45</span> Diagnostic Applications</h4>
+                            <button class="expand-btn"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="chapter-content">
+                            <p>This section explores how AI algorithms are being used to analyze medical images such as X-rays, MRIs, and CT scans with remarkable accuracy.</p>
+                            <ul>
+                                <li><span class="timestamp">04:12</span> AI systems can detect lung cancer from CT scans with 94% accuracy, compared to 88% for human radiologists.</li>
+                                <li><span class="timestamp">05:30</span> Example of Google's DeepMind AI detecting over 50 eye diseases from retinal scans.</li>
+                                <li><span class="timestamp">07:15</span> Discussion of how these systems are trained on millions of annotated medical images.</li>
+                            </ul>
+                            <p class="quote">"The combination of human expertise and AI capabilities is creating a diagnostic powerhouse that exceeds what either could achieve alone." - Dr. Sarah Chen</p>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter">
+                        <div class="chapter-header">
+                            <h4><span class="timestamp">09:22</span> Personalized Treatment Plans</h4>
+                            <button class="expand-btn"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="chapter-content">
+                            <p>The video discusses how AI is enabling truly personalized medicine by analyzing patient data to recommend optimal treatment strategies.</p>
+                            <p>Machine learning algorithms can process thousands of variables including:</p>
+                            <ul>
+                                <li>Genetic information</li>
+                                <li>Medical history</li>
+                                <li>Lifestyle factors</li>
+                                <li>Treatment response patterns</li>
+                            </ul>
+                            <p class="key-point">Key point: Personalized treatment plans powered by AI have shown to improve patient outcomes by up to 30% in clinical trials.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter">
+                        <div class="chapter-header">
+                            <h4><span class="timestamp">15:40</span> Ethical Considerations</h4>
+                            <button class="expand-btn"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="chapter-content">
+                            <p>The final section addresses important ethical questions surrounding AI in healthcare:</p>
+                            <ul>
+                                <li><span class="timestamp">16:05</span> Patient privacy concerns with data collection</li>
+                                <li><span class="timestamp">18:30</span> Algorithmic bias and ensuring fair treatment across demographics</li>
+                                <li><span class="timestamp">21:15</span> Questions of liability when AI systems make mistakes</li>
+                            </ul>
+                            <p class="quote">"We must ensure that as we advance technologically, we don't leave our humanity behind. The patient must always remain at the center of healthcare." - Dr. Michael Rodriguez</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="summary-footer">
+                    <div class="key-insights">
+                        <h4>Key Insights</h4>
+                        <ul>
+                            <li>AI diagnostic tools are achieving accuracy rates that exceed human capabilities in specific domains</li>
+                            <li>The integration of AI in healthcare could save billions while improving patient outcomes</li>
+                            <li>Ethical frameworks must evolve alongside technological capabilities</li>
+                            <li>The future of healthcare will likely involve human-AI collaborative systems rather than replacement</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="technical-terms">
+                        <h4>Technical Terms</h4>
+                        <ul>
+                            <li><strong>Machine Learning</strong>: A subset of AI that enables systems to learn from data without explicit programming</li>
+                            <li><strong>Neural Networks</strong>: Computing systems inspired by biological neural networks that form the basis of deep learning</li>
+                            <li><strong>Computer Vision</strong>: AI technology that enables computers to derive meaningful information from digital images and videos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="export-section">
+            <h3>Export & Share</h3>
+            <div class="export-options">
+                <div class="export-group">
+                    <h4>Export Format</h4>
+                    <div class="format-options">
+                        <button class="format-btn active">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Text</span>
+                        </button>
+                        <button class="format-btn">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>PDF</span>
+                        </button>
+                        <button class="format-btn">
+                            <i class="fas fa-file-word"></i>
+                            <span>Word</span>
+                        </button>
+                        <button class="format-btn">
+                            <i class="fas fa-file-powerpoint"></i>
+                            <span>PowerPoint</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="export-group">
+                    <h4>Share</h4>
+                    <div class="share-options">
+                        <button class="share-btn">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </button>
+                        <button class="share-btn">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </button>
+                        <button class="share-btn">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </button>
+                        <button class="share-btn">
+                            <i class="fas fa-link"></i>
+                            <span>Copy Link</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="export-group">
+                    <h4>Integration</h4>
+                    <div class="integration-options">
+                        <button class="integration-btn">
+                            <img src="https://via.placeholder.com/20" alt="Notion">
+                            <span>Notion</span>
+                        </button>
+                        <button class="integration-btn">
+                            <img src="https://via.placeholder.com/20" alt="Evernote">
+                            <span>Evernote</span>
+                        </button>
+                        <button class="integration-btn">
+                            <img src="https://via.placeholder.com/20" alt="Google Docs">
+                            <span>Google Docs</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-preview">
+                <h4>Social Media Preview</h4>
+                <div class="preview-container">
+                    <div class="preview-card">
+                        <img src="https://via.placeholder.com/500x250" alt="Video Thumbnail">
+                        <div class="preview-content">
+                            <h5>Key Insights: AI in Healthcare</h5>
+                            <p>AI diagnostic tools are achieving 94% accuracy in cancer detection, exceeding human capabilities. The integration could save billions while improving patient outcomes. #AIHealthcare #MedTech</p>
+                        </div>
+                    </div>
+                    <div class="preview-actions">
+                        <button>Edit Preview</button>
+                        <button>Generate New</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fab fa-youtube"></i>
+                <h2>VideoSummarizer</h2>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 VideoSummarizer. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
